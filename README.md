@@ -1,2 +1,2 @@
 # mygo
-this is my learn go
+This is a project my record learn go  
