@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func quickSort(arr []int) []int {
 	if len(arr) <= 1 {
 		return arr
@@ -25,7 +23,7 @@ func quickSort(arr []int) []int {
 	return newArr
 }
 
-//快排思路：通过一次循环将待排序记录分割成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。
+// 快排思路：通过一次循环将待排序记录分割成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。
 func main() {
 	arr := []int{9, 4, 5, 1, 16, 3}
 	fmt.Println(quickSort(arr))
