@@ -31,6 +31,25 @@ func AfterFuncDemo() {
 
 }
 
+// 超时控制
+
+func doBadthing(done chan bool) {
+	time.Sleep(1 * time.Second)
+
+	done <- true
+}
+func timeout(f func(chan bool)) error {
+	done := make(chan bool)
+	go f(done)
+	select {
+	case <-done:
+		fmt.Println("done")
+		return nil
+	case <-time.After(time.Millisecond):
+		return fmt.Errorf("timeout")
+	}
+}
+
 func main() {
 	var newStr = make(chan string)
 	test := "hello"
@@ -40,4 +59,6 @@ func main() {
 	WaitChannel(newStr)
 
 	AfterFuncDemo()
+
+	timeout(doBadthing)
 }
