@@ -1,0 +1,22 @@
+/kube-controller-manager 
+--kubeconfig=/etc/kubernetes/kube-controller-manager-kubeconfig.yaml 
+--leader-elect=true 
+--service-account-private-key-file=/etc/kubernetes/ssl/apiserver-key.pem 
+--root-ca-file=/etc/kubernetes/ssl/ca.pem 
+--cluster-signing-cert-file=/etc/kubernetes/ssl/ca.pem 
+--cluster-signing-key-file=/etc/kubernetes/ssl/ca-key.pem 
+--enable-hostpath-provisioner=false --node-monitor-grace-period=40s 
+--node-monitor-period=5s 
+--pod-eviction-timeout=5m0s 
+--kube-api-qps=100 
+--kube-api-burst=100 
+--profiling=false 
+--terminated-pod-gc-threshold=200 
+--v=0 
+--use-service-account-credentials=true 
+--allocate-node-cidrs=true 
+--cluster-cidr=10.232.0.0/14 
+--service-cluster-ip-range=10.222.0.0/16 
+--node-cidr-mask-size=24 
+--feature-gates=ExpandPersistentVolumes=True,GracefulNodeShutdown=true 
+--http2-max-streams-per-connection=2000

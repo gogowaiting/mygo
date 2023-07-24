@@ -1,0 +1,49 @@
+/kube-apiserver 
+--advertise-address=10.20.0.8 
+--etcd-servers=https://10.20.0.8:2379,https://10.20.0.9:2379,https://10.20.0.10:2379 
+--etcd-compaction-interval=5m 
+--etcd-cafile=/etc/ssl/etcd/ssl/ca.pem 
+--etcd-certfile=/etc/ssl/etcd/ssl/node-node-5.pem 
+--etcd-keyfile=/etc/ssl/etcd/ssl/node-node-5-key.pem 
+--bind-address=0.0.0.0 
+--apiserver-count=3 
+--endpoint-reconciler-type=lease 
+--enable-admission-plugins=NamespaceLifecycle,
+                            LimitRanger,
+                            ServiceAccount,
+                            DefaultStorageClass,
+                            PodNodeSelector,
+                            PodTolerationRestriction,
+                            ValidatingAdmissionWebhook,
+                            ResourceQuota,
+                            PersistentVolumeClaimResize 
+--service-cluster-ip-range=10.222.0.0/16 
+--service-node-port-range=30000-32767 
+--client-ca-file=/etc/kubernetes/ssl/ca.pem 
+--profiling=false 
+--kubelet-certificate-authority=/etc/kubernetes/ssl/ca.pem 
+--kubelet-client-certificate=/etc/kubernetes/ssl/node-node-5.pem 
+--kubelet-client-key=/etc/kubernetes/ssl/node-node-5-key.pem 
+--service-account-lookup=true 
+--kubelet-preferred-address-types=InternalIP,Hostname,ExternalDNS,ExternalIP,InternalDNS 
+--tls-cert-file=/etc/kubernetes/ssl/apiserver.pem 
+--tls-private-key-file=/etc/kubernetes/ssl/apiserver-key.pem 
+--requestheader-client-ca-file=/etc/kubernetes/ssl/ca.pem 
+--requestheader-extra-headers-prefix=X-Remote-Extra- 
+--requestheader-group-headers=X-Remote-Group 
+--requestheader-username-headers=X-Remote-User 
+--proxy-client-cert-file=/etc/kubernetes/ssl/apiserver.pem 
+--proxy-client-key-file=/etc/kubernetes/ssl/apiserver-key.pem 
+--service-account-key-file=/etc/kubernetes/ssl/apiserver.pem 
+--service-account-issuer=https://kubernetes.default.svc.cluster.local 
+--service-account-signing-key-file=/etc/kubernetes/ssl/apiserver-key.pem 
+--secure-port=6443 --storage-backend=etcd3 
+--v=0 
+--allow-privileged=true 
+--anonymous-auth=True 
+--authorization-mode=Node,RBAC 
+--authentication-token-webhook-config-file=/etc/kubernetes/keystone_webhook_config.yaml 
+--feature-gates=ExpandPersistentVolumes=True,GracefulNodeShutdown=true 
+--max-requests-inflight=1200 
+--max-mutating-requests-inflight=600 
+--http2-max-streams-per-connection=2000
