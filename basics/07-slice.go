@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	s := make([]string, 3)
+	// slice 切片
+	s := make([]string, 3) // 初始化为非零长度空切片，长度为3的切片
 	s[0] = "a"
 	s[1] = "b"
 	s[2] = "c"
