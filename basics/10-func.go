@@ -37,28 +37,15 @@ func intSeq() func() int {
 	}
 }
 
-// 函数递归,斐波那契
-func fact(n int) int {
-	if n == 0 {
-		return 0
-	} else if n == 1 {
-		return 1
-	}
-	return fact(n-2) + fact(n-1)
-
-}
-
 func main() {
 	sum := plus(1, 2)
 	fmt.Println(sum)
 
 	fmt.Println(one())
-	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	nums := []int{1, 2, 3, 4, 5}
 	fmt.Println(two(nums...)) // slice... 表示打散传入
 
 	nextInt := intSeq()
 	fmt.Println(nextInt())
 	fmt.Println(nextInt())
-
-	fmt.Println(fact(10))
 }
