@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	// 创建一个空map
+	// 创建一个空map,make 分配了内存空间
+	// 对nil的map 赋值会触发panic
 	m := make(map[string]int)
 	m["k1"] = 123
 	m["k2"] = 456
