@@ -9,6 +9,14 @@ type person struct {
 	age  int
 }
 
+// struct 结构体嵌套
+
+type student struct {
+	person
+	stuId  int
+	school string
+}
+
 func main() {
 	fmt.Println(person{"Bob", 20}) // 不用指明key,直接初始化
 	fmt.Println(person{name: "Bob", age: 16})
@@ -20,4 +28,13 @@ func main() {
 	de := &demo
 	de.name = "Hank"
 	fmt.Println(de)
+
+	stu_1 := student{
+		person: person{
+			"小王", 18,
+		},
+		stuId:  110,
+		school: "育才学校",
+	}
+	fmt.Println("王同学：", stu_1)
 }
