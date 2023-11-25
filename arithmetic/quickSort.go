@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 func quickSort(arr []int) []int {
 	if len(arr) <= 1 {
 		return arr
@@ -9,6 +13,7 @@ func quickSort(arr []int) []int {
 	hight := make([]int, 0, 0)
 	mid := make([]int, 0, 0)
 	mid = append(mid, pivot)
+
 	for i := 1; i < len(arr); i++ {
 		if arr[i] < pivot {
 			low = append(low, arr[i])
