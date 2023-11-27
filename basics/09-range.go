@@ -37,5 +37,23 @@ func main() {
 	for i, c := range "google" {
 		fmt.Println(i, c)
 	}
+	// range 直接修改返回的数据，不会生效，返回数据并不是原始数据
+	type account struct {
+		price float32
+	}
+	accounts := []account{
+		{price: 100},
+		{price: 200},
+	}
 
+	for _, a := range accounts {
+		a.price += 10
+
+	}
+
+	fmt.Println(accounts)
+	for i := range accounts {
+		accounts[i].price += 10
+	}
+	fmt.Println(accounts)
 }

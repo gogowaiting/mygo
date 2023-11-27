@@ -9,8 +9,7 @@ type person struct {
 	age  int
 }
 
-// struct 结构体嵌套
-
+// struct 结构体嵌套,
 type student struct {
 	person
 	stuId  int
@@ -37,4 +36,26 @@ func main() {
 		school: "育才学校",
 	}
 	fmt.Println("王同学：", stu_1)
+
+	students := []student{
+		{
+			person: person{
+				"小张", 18,
+			},
+			stuId:  111,
+			school: "育才学校",
+		},
+		{
+			person: person{
+				"小李", 16,
+			},
+			stuId:  112,
+			school: "育才学校",
+		},
+	}
+
+	for i := range students {
+		fmt.Println(students[i].stuId)
+	}
+
 }
