@@ -24,4 +24,9 @@ func main() {
 	n := map[string]string{"k1": "one", "k2": "two"}
 	fmt.Println("n:", n)
 
+	arr := make([]int, 0)
+	for i := 0; i < 2000; i++ {
+		fmt.Println("len: ", len(arr), "cap: ", cap(arr))
+		arr = append(arr, i)
+	}
 }

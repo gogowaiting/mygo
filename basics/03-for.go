@@ -22,4 +22,12 @@ func main() {
 		fmt.Println(i)
 		i = i + 1
 	}
+
+loop:
+	for i := 0; i < 10; i++ {
+		if i == 5 {
+			break loop
+		}
+		fmt.Print(i)
+	}
 }

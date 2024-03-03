@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	var a [5]int
 	a[4] = 100
-	fmt.Println("get: ", a[0])
+	fmt.Println("get a[0]: ", a[0])
 	fmt.Println("len: ", len(a))
 
 	b := [5]int{1, 2, 3, 4, 5}
