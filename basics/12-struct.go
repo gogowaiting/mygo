@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // struct 结构体是字段类型的集合
-// struct{} 空结构体不占用内存空间，只站位
+// struct{} 空结构体不占用内存空间，只占位
 type person struct {
 	name string
 	age  int
