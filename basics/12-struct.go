@@ -16,6 +16,21 @@ type student struct {
 	school string
 }
 
+// 通过 stuct{} 实现golang中的Set
+type Set[K comparable] map[K]struct{}
+
+func (s Set[K]) Add(val K) {
+	s[val] = struct{}{}
+}
+func (s Set[K]) Remove(val K) {
+	delete(s, val)
+}
+
+func (s Set[K]) Contains(val K) bool {
+	_, ok := s[val]
+	return ok
+}
+
 func main() {
 	fmt.Println(person{"Bob", 20}) // 不用指明key,直接初始化
 	fmt.Println(person{name: "Bob", age: 16})
@@ -57,5 +72,11 @@ func main() {
 	for i := range students {
 		fmt.Println(students[i].stuId)
 	}
+
+	set := Set[string]{}
+	set.Add("a")
+	set.Add("b")
+	fmt.Println(set)
+	fmt.Println(set.Contains("a"))
 
 }
