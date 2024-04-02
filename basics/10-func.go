@@ -28,7 +28,7 @@ func two(nums ...int) int {
 	return sum
 }
 
-// 匿名函数
+// 匿名函数,无需指定函数名称，也可以直接赋值变量
 func intSeq() func() int {
 	i := 0
 	return func() int {
