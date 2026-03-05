@@ -1,0 +1,36 @@
+baseURL = "https://gogowaiting.github.io/mygo/"
+locale = "zh-cn"
+title = "Amos 的技术笔记"
+theme = "hugo-book"
+paginate = 20
+
+[params]
+  author = "gogowaiting"
+  description = "技术学习笔记与实践，涵盖 Go、Python、算法、系统设计与工程实践"
+  BookToC = true
+  BookSection = "*"
+  BookRepo = "https://github.com/gogowaiting/mygo"
+  BookEditPath = "edit/main/site/content"
+  BookDateFormat = "2006-01-02"
+  BookSearch = true
+  BookComments = false
+
+[menu]
+  [[menu.after]]
+    name = "GitHub"
+    url = "https://github.com/gogowaiting"
+    weight = 1
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    style = "monokai"
+    lineNos = true
+
+[[module.mounts]]
+  source = "content"
+  target = "content"
+
+[[module.mounts]]
+  source = "../cmd"
+  target = "content/cmd"

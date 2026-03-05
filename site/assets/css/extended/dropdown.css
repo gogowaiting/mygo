@@ -1,0 +1,75 @@
+/* Dropdown menu styles */
+.header-nav,
+.menu,
+.menu li {
+    overflow: visible !important;
+}
+
+.menu li.has-children {
+    position: relative;
+}
+
+.menu li.has-children > a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dropdown-icon {
+    transition: transform 0.2s ease;
+}
+
+.menu li.has-children:hover .dropdown-icon,
+.menu li.has-children:focus-within .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    display: none;
+    position: fixed;
+    top: var(--header-height, 60px);
+    left: auto;
+    min-width: 160px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+}
+
+.menu li.has-children:hover > .submenu,
+.menu li.has-children:focus-within > .submenu {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    padding: 8px 16px;
+    white-space: nowrap;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.submenu li a:hover {
+    background: var(--tertiary);
+    color: var(--primary);
+}
+
+/* Mobile: submenu always visible, indented */
+@media (max-width: 680px) {
+    .submenu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        border: none;
+        padding: 0 0 0 16px;
+        background: transparent;
+    }
+
+    .dropdown-icon {
+        display: none;
+    }
+}

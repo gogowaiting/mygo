@@ -1,3 +1,17 @@
 .DS_Store
-.vscode
-.idea
+.vscode/
+.idea/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/logs/
+vendor/
+
+# Hugo
+site/public/
+site/resources/
+.hugo_build.lock

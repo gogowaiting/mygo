@@ -1,0 +1,12 @@
+{{- $file := .Get 0 -}}
+{{- $lang := .Get 1 | default "go" -}}
+{{- $fullpath := $file -}}
+{{- if hasPrefix $file "../cmd/" -}}
+    {{- $fullpath = replace $file "../cmd/" "cmd/" -}}
+{{- end -}}
+{{- if fileExists $fullpath -}}
+{{- $content := readFile $fullpath -}}
+{{- highlight $content $lang -}}
+{{- else -}}
+<p style="color:red">File not found: {{ $fullpath }}</p>
+{{- end -}}
